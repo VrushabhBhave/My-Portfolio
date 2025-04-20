@@ -51,7 +51,7 @@ function App(){
             <li className="list"><a onClick={collapseNav} className="mx-1 sm:px-0 lg:px-2 text-lg" href="#home">Home</a></li>
             <li className="list"><a onClick={collapseNav} className="mx-1 sm:px-0 lg:px-2 text-lg" href="#about">About</a></li>
             <li className="list"><a onClick={collapseNav} className="mx-1 sm:px-0 lg:px-2 text-lg" href="#skills">Skills</a></li>
-            <li className="list"><a onClick={collapseNav} className="mx-1 sm:px-0 lg:px-2 text-lg" href="">Projects</a></li>
+            <li className="list"><a onClick={collapseNav} className="mx-1 sm:px-0 lg:px-2 text-lg" href="#projects">Projects</a></li>
             <li className="list"><a onClick={collapseNav} className="mx-1 sm:px-0 lg:px-2 text-lg" href="">Contact</a></li>
           </ul> 
         </nav>
