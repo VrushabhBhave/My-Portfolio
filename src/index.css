@@ -92,3 +92,33 @@ html{
 .skill-data div:hover{
     box-shadow: 0 0 50px #58a6ff66;
 }
+
+/* PROJECTS  */
+#projects{
+    background: linear-gradient(135deg, rgb(10, 25, 47), rgb(17, 34, 64), rgb(13, 17, 23));
+}
+
+#projects .cards .card{
+    box-shadow: 0 4px 10px #0e1a2b80;
+    border-radius: 10px;
+}
+
+#projects .cards .card .technologies span{
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    box-shadow: 0 1px 5px #00f2fe33;
+    transition: all 500ms ease-in-out;
+}
+
+#projects .cards .card .technologies span:hover{
+    background-color: #00f2fe;
+    color: black;
+}
+
+#projects .cards .card .buttons button{
+    transition: all 500ms ease-in-out;
+}
+#projects .cards .card .buttons button:hover{
+    background-color: #00f2fe;
+    color: black;
+}

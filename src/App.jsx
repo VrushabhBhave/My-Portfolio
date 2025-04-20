@@ -137,6 +137,55 @@ function App(){
           </div>
         </div>
       </main>
+      <main id="projects" className="px-[16px] py-[64px]">
+        <div className="heading py-5">
+          <h1 data-aos="fade-right" className="text-center text-[#58a6ff] text-[1.8rem] sm:text-[2.5rem] font-bold my-[0.5rem]">MY PROJECTS</h1>
+        </div>
+        <div className="cards w-[100%] flex justify-center flex-wrap gap-5 overflow-x-hidden">
+          <div data-aos="fade-right" className="card w-[100%] sm:w-[80%] lg:w-[35%] xl:w-[28%] p-10 bg-[#112240] relative">
+            <h1 className="text-[#00f2fe] text-3xl font-bold py-2">Search Application</h1>
+            <p className="text-white py-2">It is a web application that integrates four APIs: Google API, Wiki API, Gemini API, and Unsplash API. This integration makes searching and discovering content easier and more efficient for users.</p>
+            <div className="technologies flex flex-wrap gap-3 py-2 text-[0.6rem] sm:text-[0.8rem] mb-8">
+              <span className="py-2 px-5 border-1 border-[#00f2fe] rounded-full bg-[#0f172a] text-[#00f2fe] font-medium">HTML</span>
+              <span className="py-2 px-5 border-1 border-[#00f2fe] rounded-full bg-[#0f172a] text-[#00f2fe] font-medium">TAILWIND-CSS</span>
+              <span className="py-2 px-5 border-1 border-[#00f2fe] rounded-full bg-[#0f172a] text-[#00f2fe] font-medium">VANILLA-CSS</span>
+              <span className="py-2 px-5 border-1 border-[#00f2fe] rounded-full bg-[#0f172a] text-[#00f2fe] font-medium">JAVASCRIPT</span>
+              <span className="py-2 px-5 border-1 border-[#00f2fe] rounded-full bg-[#0f172a] text-[#00f2fe] font-medium">API</span>
+            </div>
+            <div className="buttons flex absolute bottom-8 gap-3 text-sm sm:text-md">
+            <button className="text-[#00f2fe]"><a className="font-bold border-2 border-[#00f2fe] rounded-md px-4 py-2" href="https://multi-search-application.vercel.app/" target="_blank">View Project</a></button>
+            <button className="text-[#00f2fe]"><a className="font-bold border-2 border-[#00f2fe] rounded-md px-4 py-2" href="https://github.com/VrushabhBhave/MultiSearch-Application.git" target="_blank">View Code</a></button>
+            </div>
+          </div>
+          <div data-aos="fade-up" className="card w-[100%] sm:w-[80%] lg:w-[35%] xl:w-[28%] p-10 bg-[#112240] relative">
+            <h1 className="text-[#00f2fe] text-3xl font-bold py-2">Pokemon App</h1>
+            <p className="text-white py-2">This app utilizes the Pokemon API to fetch and display Pokemon data. It features a search functionality to find Pokemon by name and a filter option to sort them by type, providing an interactive and user-friendly experience.</p>
+            <div className="technologies flex flex-wrap gap-3 py-2 text-[0.6rem] sm:text-[0.8rem] mb-8">
+              <span className="py-2 px-5 border-1 border-[#00f2fe] rounded-full bg-[#0f172a] text-[#00f2fe] font-medium">HTML</span>
+              <span className="py-2 px-5 border-1 border-[#00f2fe] rounded-full bg-[#0f172a] text-[#00f2fe] font-medium">CSS</span>
+              <span className="py-2 px-5 border-1 border-[#00f2fe] rounded-full bg-[#0f172a] text-[#00f2fe] font-medium">JAVASCRIPT</span>
+              <span className="py-2 px-5 border-1 border-[#00f2fe] rounded-full bg-[#0f172a] text-[#00f2fe] font-medium">POKE API</span>
+            </div>
+            <div className="buttons flex absolute bottom-8 gap-3 text-sm sm:text-md">
+            <button className="text-[#00f2fe]"><a className="font-bold border-2 border-[#00f2fe] rounded-md px-4 py-2" href="https://search-pokemon-olive.vercel.app/" target="_blank">View Project</a></button>
+            <button className="text-[#00f2fe]"><a className="font-bold border-2 border-[#00f2fe] rounded-md px-4 py-2" href="https://github.com/VrushabhBhave/Search-Pokemon.git" target="_blank">View Code</a></button>
+            </div>
+          </div>
+          <div data-aos="fade-left" className="card w-[100%] sm:w-[80%] lg:w-[35%] xl:w-[28%] p-10 bg-[#112240] relative">
+            <h1 className="text-[#00f2fe] text-3xl font-bold py-2">Aria Webpage</h1>
+            <p className="text-white py-2">This is a clone of the Aria website created using HTML and CSS. The project replicates the core structure and design elements of the original site, providing a simple, responsive layout that mimics the Area user experience.</p>
+            <div className="technologies flex flex-wrap gap-3 py-2 text-[0.6rem] sm:text-[0.8rem] mb-8">
+              <span className="py-2 px-5 border-1 border-[#00f2fe] rounded-full bg-[#0f172a] text-[#00f2fe] font-medium">HTML</span>
+              <span className="py-2 px-5 border-1 border-[#00f2fe] rounded-full bg-[#0f172a] text-[#00f2fe] font-medium">CSS</span>
+              <span className="py-2 px-5 border-1 border-[#00f2fe] rounded-full bg-[#0f172a] text-[#00f2fe] font-medium">JAVASCRIPT</span>
+            </div>
+            <div className="buttons flex absolute bottom-8 gap-3 text-sm sm:text-md">
+            <button className="text-[#00f2fe]"><a className="font-bold border-2 border-[#00f2fe] rounded-md px-4 py-2" href="https://major-project-vrushabh-bhaves-projects.vercel.app/" target="_blank">View Project</a></button>
+            <button className="text-[#00f2fe]"><a className="font-bold border-2 border-[#00f2fe] rounded-md px-4 py-2" href="https://github.com/VrushabhBhave/Major-Project.git" target="_blank">View Code</a></button>
+            </div>
+          </div>
+        </div>
+      </main>
     </>
   )
 }
