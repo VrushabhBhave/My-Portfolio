@@ -10,6 +10,13 @@ import { MdOutlineClose } from "react-icons/md";
 import { VscGithubInverted } from "react-icons/vsc";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { IoMdMail } from "react-icons/io";
+import { FaJava } from "react-icons/fa6";
+import { IoLogoJavascript } from "react-icons/io5";
+import { FaReact } from "react-icons/fa";
+import { FaHtml5 } from "react-icons/fa";
+import { FaCss3Alt } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { RiTailwindCssFill } from "react-icons/ri";
 
 
 function App(){
@@ -39,7 +46,7 @@ function App(){
           <ul className="flex flex-col text-center gap-4 sm:flex-row lg:gap-3 font-bold">
             <li className="list"><a className="mx-1 sm:px-0 lg:px-2 text-lg" href="#home">Home</a></li>
             <li className="list"><a className="mx-1 sm:px-0 lg:px-2 text-lg" href="#about">About</a></li>
-            <li className="list"><a className="mx-1 sm:px-0 lg:px-2 text-lg" href="">Skills</a></li>
+            <li className="list"><a className="mx-1 sm:px-0 lg:px-2 text-lg" href="#skills">Skills</a></li>
             <li className="list"><a className="mx-1 sm:px-0 lg:px-2 text-lg" href="">Projects</a></li>
             <li className="list"><a className="mx-1 sm:px-0 lg:px-2 text-lg" href="">Contact</a></li>
           </ul> 
@@ -89,6 +96,41 @@ function App(){
         <div className="hobbies">
           <h1 data-aos="fade-right" className="text-center text-[#58a6ff] text-[1.8rem] sm:text-[2.5rem] font-bold my-[1.5rem]">Hobbies & Interests</h1>
           <p data-aos="fade-up" className="text-[1.1rem] text-[#c9d1d9] mx-[auto] my-[1rem] max-w-[800px]">Outside of tech, I enjoy writing poetry and reading. I’m deeply interested in geopolitics and global affairs, often diving into articles and books that explore the world from different perspectives.</p>
+        </div>
+      </main>
+      <main id="skills" className="px-[16px] py-[64px]">
+        <div className="heading py-5">
+          <h1 data-aos="fade-right" className="text-center text-[#58a6ff] text-[1.8rem] sm:text-[2.5rem] font-bold my-[0.5rem]">MY SKILLS</h1>
+        </div>
+        <div className="skill-data m-auto">
+          <div data-aos="zoom-in" className="java flex flex-col items-center px-8 py-3 border-2 rounded-2xl border-[#58a6ff] bg-[#1f2937]">
+            <FaJava className="text-[#f89820] text-7xl"/>
+            <span className="text-white py-2 font-medium">Java</span>
+          </div>
+          <div data-aos="zoom-in" className="javascript flex flex-col items-center px-8 py-3 border-2 rounded-2xl border-[#58a6ff] bg-[#1f2937]">
+            <IoLogoJavascript className="text-[#f0db4f] text-7xl"/>
+            <span className="text-white py-2 font-medium">JavaScript</span>
+          </div>
+          <div data-aos="zoom-in" className="react flex flex-col items-center px-8 py-3 border-2 rounded-2xl border-[#58a6ff] bg-[#1f2937]">
+            <FaReact className="text-[#61dbfb] text-7xl"/>
+            <h3 className="text-white py-2 font-medium">React</h3>
+          </div>
+          <div data-aos="zoom-in" className="react flex flex-col items-center px-8 py-3 border-2 rounded-2xl border-[#58a6ff] bg-[#1f2937]">
+            <FaHtml5 className="text-[#e44d26] text-7xl"/>
+            <h3 className="text-white py-2 font-medium">HTML</h3>
+          </div>
+          <div data-aos="zoom-in" className="react flex flex-col items-center px-8 py-3 border-2 rounded-2xl border-[#58a6ff] bg-[#1f2937]">
+            <FaCss3Alt className="text-[#264de4] text-7xl"/>
+            <h3 className="text-white py-2 font-medium">CSS</h3>
+          </div>
+          <div data-aos="zoom-in" className="react flex flex-col items-center px-8 py-3 border-2 rounded-2xl border-[#58a6ff] bg-[#1f2937]">
+            <RiTailwindCssFill className="text-[#38bdf8] text-7xl"/>
+            <h3 className="text-white py-2 font-medium">TailWind</h3>
+          </div>
+          <div data-aos="zoom-in" className="react flex flex-col items-center px-8 py-3 border-2 rounded-2xl border-[#58a6ff] bg-[#1f2937]">
+            <FaGithub className="text-[#ffffff] text-7xl"/>
+            <h3 className="text-white py-2 font-medium">GitHub</h3>
+          </div>
         </div>
       </main>
     </>
