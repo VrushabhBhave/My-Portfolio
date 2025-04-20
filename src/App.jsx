@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import image from "./assets/profile.jpg";
 import Typewriter from "typewriter-effect";
 import 'animate.css';
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { useForm } from "react-hook-form"
 
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClose } from "react-icons/md";
@@ -34,6 +35,64 @@ function App(){
     setBurger("hidden");
   }
 
+  // Only For Form 
+  const [charCount, setCharCount] = useState(0);
+  const [emailCharCount, setEmailCharCount] = useState(0);
+  const [messageCharCount, setMessageCharCount] = useState(0);
+  const maxLength = 30;
+  const messageLength = 100;
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const nameRef = useRef(null);
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  async function onSubmit(data){
+    console.log("submitting the form", data);
+    try{
+      const response = await fetch("https://formsubmit.co/ajax/vrushabhbhave31@gmail.com",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type" : "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if(response.ok){
+        alert("Form submitted succesfully!");
+      }else{
+        alert("Failed to submit the form.");
+      }
+      setName("");
+      setEmail("");
+      setMessage("");
+      nameRef.current.focus();
+    }catch(error){
+      console.error("Error submitting form:", error);
+      alert("An error occured while submitting the form.");
+    }
+  }
+
+  function changeFunc(e){
+    setCharCount(e.target.value.length);
+    setName(e.target.value);
+  }
+  function emailValue(e){
+    setEmailCharCount(e.target.value.length);
+    setEmail(e.target.value);
+  }
+  function messageValue(e){
+    setMessageCharCount(e.target.value.length);
+    setMessage(e.target.value);
+  }
+
   return (
     <>
       <header className="flex flex-col sm:flex-row justify-between items-center bg-[#0F172A] text-white p-[1.2rem] sm:px-[2rem] lg:px-[8rem] sticky top-0 z-1000">
@@ -52,7 +111,7 @@ function App(){
             <li className="list"><a onClick={collapseNav} className="mx-1 sm:px-0 lg:px-2 text-lg" href="#about">About</a></li>
             <li className="list"><a onClick={collapseNav} className="mx-1 sm:px-0 lg:px-2 text-lg" href="#skills">Skills</a></li>
             <li className="list"><a onClick={collapseNav} className="mx-1 sm:px-0 lg:px-2 text-lg" href="#projects">Projects</a></li>
-            <li className="list"><a onClick={collapseNav} className="mx-1 sm:px-0 lg:px-2 text-lg" href="">Contact</a></li>
+            <li className="list"><a onClick={collapseNav} className="mx-1 sm:px-0 lg:px-2 text-lg" href="#contact">Contact</a></li>
           </ul> 
         </nav>
       </header>
@@ -141,7 +200,7 @@ function App(){
         <div className="heading py-5">
           <h1 data-aos="fade-right" className="text-center text-[#58a6ff] text-[1.8rem] sm:text-[2.5rem] font-bold my-[0.5rem]">MY PROJECTS</h1>
         </div>
-        <div className="cards w-[100%] flex justify-center flex-wrap gap-5 overflow-x-hidden">
+        <div className="cards w-[100%] flex justify-center flex-wrap gap-5 overflow-hidden">
           <div data-aos="fade-right" className="card w-[100%] sm:w-[80%] lg:w-[35%] xl:w-[28%] p-10 bg-[#112240] relative">
             <h1 className="text-[#00f2fe] text-3xl font-bold py-2">Search Application</h1>
             <p className="text-white py-2">It is a web application that integrates four APIs: Google API, Wiki API, Gemini API, and Unsplash API. This integration makes searching and discovering content easier and more efficient for users.</p>
@@ -184,6 +243,48 @@ function App(){
             <button className="text-[#00f2fe]"><a className="font-bold border-2 border-[#00f2fe] rounded-md px-4 py-2" href="https://github.com/VrushabhBhave/Major-Project.git" target="_blank">View Code</a></button>
             </div>
           </div>
+        </div>
+      </main>
+      <main id="contact" className="px-[16px] py-[64px]">
+        <div className="heading py-5">
+          <h1 data-aos="fade-right" className="text-center text-[#58a6ff] text-[1.8rem] sm:text-[2.5rem] font-bold my-[0.5rem]">CONTACT ME</h1>
+        </div>
+        <div data-aos="fade-up" data-aos-duration="3000" className="form flex justify-center text-white">
+          <form action="" onSubmit={handleSubmit(onSubmit)}>
+            <div className="flex flex-col">
+              <label htmlFor="name" className="py-5 text-center">Name</label>
+              <input type="text" id="name" placeholder="Enter your name" className="border-1 border-[#00f2fe] w-70 sm:w-120 px-3 py-2 rounded-lg bg-[#0f172a] text-[#d0d0d0]" 
+              {...register("name", {
+                required: "name is required!",
+                pattern: { value: /^[A-Za-z ]+$/i, message:"Enter valid name!" },
+              })} onChange={(e) => changeFunc(e)} maxLength={30} value={name} ref={(e) => {
+                nameRef.current = e;            // custom ref
+                register("name").ref(e);        // RHF's ref
+              }}/>
+              {errors.name && <p className="text-red-500 py-2 px-2">{errors.name.message}</p>}
+              <p className="text-sm text-gray-400 py-2 px-2">{charCount} / {maxLength} characters</p>
+            </div>
+            <div className="flex flex-col">
+              <label htmlFor="email" className="py-5 text-center">Email</label>
+              <input type="text" id="email" placeholder="Enter your email" className="border-1 border-[#00f2fe] w-70 sm:w-120 px-3 py-2 rounded-lg bg-[#0f172a] text-[#d0d0d0]" {...register("email", { 
+                required: "email is required!",
+                pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Enter valid email!"},
+              })} onChange={(e) => emailValue(e)} maxLength={30} value={email}/>
+              {errors.email && <p className="text-red-500 py-2 px-2">{errors.email.message}</p>}
+              <p className="text-sm text-gray-400 py-2 px-2">{emailCharCount} / {maxLength} characters</p>
+            </div>
+            <div className="flex flex-col">
+              <label htmlFor="message" className="py-5 text-center">Message</label>
+              <textarea id="message" placeholder="Writer your message here..." className="border-1 border-[#00f2fe] w-70 sm:w-120 px-3 py-2 rounded-lg bg-[#0f172a] text-[#d0d0d0]" {...register("message", { 
+                required: "message is required!"
+              })} rows="5" onChange={(e) => messageValue(e)} value={message}></textarea>
+              {errors.message && <p className="text-red-500 py-2 px-2">{errors.message.message}</p>}
+              <p className="text-sm text-gray-400 py-2 px-2">{messageCharCount} / {messageLength} characters</p>
+            </div>
+            <div className="button py-10">
+              <button type="submit" className="border-1 border-[white] w-70 sm:w-120 px-3 py-2 rounded-lg cursor-pointer">Submit</button>
+            </div>
+          </form>
         </div>
       </main>
     </>
