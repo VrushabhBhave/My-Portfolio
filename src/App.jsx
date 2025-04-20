@@ -30,25 +30,29 @@ function App(){
     setBurger(burger === "hidden" ? "block" : "hidden");
   }
 
+  function collapseNav(){
+    setBurger("hidden");
+  }
+
   return (
     <>
       <header className="flex flex-col sm:flex-row justify-between items-center bg-[#0F172A] text-white p-[1.2rem] sm:px-[2rem] lg:px-[8rem] sticky top-0 z-1000">
         <div className="left flex justify-between items-center w-full">
         <div className="heading">
-          <h1 className="text-[#38BDF8] text-2xl text-700 font-bold">VRUSHABH</h1>
+          <h1 className="text-[#38BDF8] text-2xl text-700 font-bold animate__animated animate__backInDown">VRUSHABH</h1>
         </div>
         <div className="burger block sm:hidden">
           <span onClick={displayNavbar}>{burger == "hidden" ? <GiHamburgerMenu className="text-3xl cursor-pointer text-[#38BDF8]"/> :
           <MdOutlineClose className="text-3xl cursor-pointer text-[#38BDF8]"/>}</span>
         </div>
         </div>
-        <nav className = {`navbar ${burger} py-5 bg-[#112240] w-[100vw] mt-5 sm:bg-[#0F172A] sm:w-105 sm:mt-0 sm:py-0 sm:block`}>
+        <nav className = {`navbar sm:block ${burger} py-5 bg-[#112240] w-[100vw] mt-5 sm:bg-[#0F172A] sm:w-105 sm:mt-0 sm:py-0 sm:block animate__animated animate__backInDown`}>
           <ul className="flex flex-col text-center gap-4 sm:flex-row lg:gap-3 font-bold">
-            <li className="list"><a className="mx-1 sm:px-0 lg:px-2 text-lg" href="#home">Home</a></li>
-            <li className="list"><a className="mx-1 sm:px-0 lg:px-2 text-lg" href="#about">About</a></li>
-            <li className="list"><a className="mx-1 sm:px-0 lg:px-2 text-lg" href="#skills">Skills</a></li>
-            <li className="list"><a className="mx-1 sm:px-0 lg:px-2 text-lg" href="">Projects</a></li>
-            <li className="list"><a className="mx-1 sm:px-0 lg:px-2 text-lg" href="">Contact</a></li>
+            <li className="list"><a onClick={collapseNav} className="mx-1 sm:px-0 lg:px-2 text-lg" href="#home">Home</a></li>
+            <li className="list"><a onClick={collapseNav} className="mx-1 sm:px-0 lg:px-2 text-lg" href="#about">About</a></li>
+            <li className="list"><a onClick={collapseNav} className="mx-1 sm:px-0 lg:px-2 text-lg" href="#skills">Skills</a></li>
+            <li className="list"><a onClick={collapseNav} className="mx-1 sm:px-0 lg:px-2 text-lg" href="">Projects</a></li>
+            <li className="list"><a onClick={collapseNav} className="mx-1 sm:px-0 lg:px-2 text-lg" href="">Contact</a></li>
           </ul> 
         </nav>
       </header>
