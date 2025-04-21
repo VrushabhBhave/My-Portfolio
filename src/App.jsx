@@ -18,6 +18,7 @@ import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 
 function App(){
@@ -253,7 +254,7 @@ function App(){
           <form action="" onSubmit={handleSubmit(onSubmit)}>
             <div className="flex flex-col">
               <label htmlFor="name" className="py-5 text-center">Name</label>
-              <input type="text" id="name" placeholder="Enter your name" className="border-1 border-[#00f2fe] w-70 sm:w-120 px-3 py-2 rounded-lg bg-[#0f172a] text-[#d0d0d0]" 
+              <input type="text" id="name" placeholder="Enter your name" className="border-1 border-[#00f2fe] w-70 sm:w-120 lg:w-150 px-3 py-2 rounded-lg bg-[#0f172a] text-[#d0d0d0]" 
               {...register("name", {
                 required: "name is required!",
                 pattern: { value: /^[A-Za-z ]+$/i, message:"Enter valid name!" },
@@ -266,7 +267,7 @@ function App(){
             </div>
             <div className="flex flex-col">
               <label htmlFor="email" className="py-5 text-center">Email</label>
-              <input type="text" id="email" placeholder="Enter your email" className="border-1 border-[#00f2fe] w-70 sm:w-120 px-3 py-2 rounded-lg bg-[#0f172a] text-[#d0d0d0]" {...register("email", { 
+              <input type="text" id="email" placeholder="Enter your email" className="border-1 border-[#00f2fe] w-70 sm:w-120 lg:w-150 px-3 py-2 rounded-lg bg-[#0f172a] text-[#d0d0d0]" {...register("email", { 
                 required: "email is required!",
                 pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Enter valid email!"},
               })} onChange={(e) => emailValue(e)} maxLength={30} value={email}/>
@@ -275,18 +276,28 @@ function App(){
             </div>
             <div className="flex flex-col">
               <label htmlFor="message" className="py-5 text-center">Message</label>
-              <textarea id="message" placeholder="Writer your message here..." className="border-1 border-[#00f2fe] w-70 sm:w-120 px-3 py-2 rounded-lg bg-[#0f172a] text-[#d0d0d0]" {...register("message", { 
+              <textarea id="message" placeholder="Writer your message here..." className="border-1 border-[#00f2fe] w-70 sm:w-120 lg:w-150 px-3 py-2 rounded-lg bg-[#0f172a] text-[#d0d0d0]" {...register("message", { 
                 required: "message is required!"
               })} rows="5" onChange={(e) => messageValue(e)} value={message}></textarea>
               {errors.message && <p className="text-red-500 py-2 px-2">{errors.message.message}</p>}
               <p className="text-sm text-gray-400 py-2 px-2">{messageCharCount} / {messageLength} characters</p>
             </div>
             <div className="button py-10">
-              <button type="submit" className="border-1 border-[white] w-70 sm:w-120 px-3 py-2 rounded-lg cursor-pointer">Submit</button>
+              <button type="submit" className="submit-btn border-1 border-[#00f2fe] w-70 sm:w-120 lg:w-150 px-3 py-2 rounded-lg cursor-pointer">Submit</button>
             </div>
           </form>
         </div>
       </main>
+      <footer className="bg-[#0F172A] py-4 text-center text-white">
+        <h1 className="py-2 text-2xl font-medium text-[#58a6ff]">Vrushabh Bhave</h1>
+        <div className="icons flex justify-center py-2 text-2xl gap-5">
+        <span className="animate__animated animate__backInDown"><a href="https://github.com/VrushabhBhave" target="_blank"><VscGithubInverted /></a></span>
+        <span className="animate__animated animate__backInDown"><a href="https://www.linkedin.com/in/vrushabh-bhave-41473a240" target="_blank"><IoLogoLinkedin /></a></span>
+        <span className="animate__animated animate__backInDown"><a href="mailto:vrushabhbhave31@gmail.com" target="_blank"><IoMdMail /></a></span>
+        </div>
+        <p className="py-2 text-gray-400">&copy; 2025 Vikas. All rights reserved.</p>
+        <ScrollToTopButton />
+      </footer>
     </>
   )
 }
